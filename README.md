@@ -9,6 +9,15 @@
 - Create BrowseRouter > Routes > Route=/ Body > RouteChildren
 - Create an outlet in your Body component
 - Create a footer component
+- Create a Login Page
+- Install axios
+- CORS - install cors in backend => Add middleware with configurations: origin , credentials:true
+- In frontEnd - Login page => add {withCredentials: true}
+- Install react-redux + reduxjs/toolkit
+- configureStore => Provider => createSlice => add reducer to store 
+- Add redux devtools in chrome 
+- Login & check if the data is coming properly in the store
+- NavBar should update as soon as user logs in and user go to the Feed page
 
 
 
