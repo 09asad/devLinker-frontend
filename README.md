@@ -10,14 +10,22 @@
 - Create an outlet in your Body component
 - Create a footer component
 - Create a Login Page
-- Install axios
+- Install axios, AXIOS: is a npm library used for HTTP methods
+
 - CORS - install cors in backend => Add middleware with configurations: origin , credentials:true
 - In frontEnd - Login page => add {withCredentials: true}
 - Install react-redux + reduxjs/toolkit
+
+- react-redux : it connects react to redux through useSelector() -> takes data & useDispatch() -> update states
+- redux-toolkit : it is a modern simplified version of redux and it reduces boilerplate, gives createSlice -> handle features and defines
+- state + reducers, gives configureStore -> handles whole app and combine all reducers
+
 - configureStore => Provider => createSlice => add reducer to store 
 - Add redux devtools in chrome 
 - Login & check if the data is coming properly in the store
 - NavBar should update as soon as user logs in and user go to the Feed page
+- user should not have to access other routes without login
+- If token is not present, redirect user to login page
 
 
 
