@@ -26,7 +26,9 @@
 - NavBar should update as soon as user logs in and user go to the Feed page
 - user should not have to access other routes without login
 - If token is not present, redirect user to login page
-
+- User can logout and redirect to profile API from the NavBar
+- Get and add the feed in the store
+- Build the userCard 
 
 
 
