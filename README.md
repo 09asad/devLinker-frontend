@@ -29,6 +29,7 @@
 - User can logout and redirect to profile API from the NavBar
 - Get and add the feed in the store
 - Build the userCard 
+- Build the edit profile component
 
 
 
