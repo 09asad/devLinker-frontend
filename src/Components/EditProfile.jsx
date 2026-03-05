@@ -107,7 +107,7 @@ const EditProfile = ({ user }) => {
                     <p>{age + " , " + gender}</p>
                     <p>{about}</p>
                 </div>
-            </div>
+            </div> 
 
             {showToast && <div className="toast toast-top toast-center">
                 <div className="alert alert-success">

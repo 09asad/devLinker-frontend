@@ -27,6 +27,16 @@ const NavBar = () => {
             <div className="flex-1">
                 <Link to={user ? "/" : "/login"} className="btn btn-ghost text-xl">DevLinker</Link>
             </div>
+
+            {user && <div>
+                <Link to={"/connections"}>
+                    <button className='btn bg-gray-700 rounded-full font-semibold  cursor-pointer hover:bg-gray-500 mx-2'>Connections</button>
+                </Link>
+                <Link to={"/requests"}>
+                    <button className='btn bg-gray-700 rounded-full font-semibold  cursor-pointer hover:bg-gray-500 mx-2'>Requests</button>
+                </Link>
+            </div>}
+
             <div className="flex gap-2">
                 {user && <div className="dropdown dropdown-end mx-5">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -41,7 +51,7 @@ const NavBar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li >
                             <Link to={"/profile"} className="justify-between">
-                                {user.firstName + " " + user.lastName}
+                                {user.firstName} {user.lastName}
                             </Link>
                         </li>
                         <li><a>Settings</a></li>

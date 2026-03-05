@@ -30,6 +30,7 @@
 - Get and add the feed in the store
 - Build the userCard 
 - Build the edit profile component
+- show toast message on updating the profile 
 
 
 
