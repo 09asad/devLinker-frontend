@@ -31,6 +31,9 @@
 - Build the userCard 
 - Build the edit profile component
 - show toast message on updating the profile 
+- build connection compo to check existing connections of the user
+- build request compo to check the incoming request to the user
+
 
 
 
