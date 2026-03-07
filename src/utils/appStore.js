@@ -5,12 +5,12 @@ import connectionReducer from "./connectionSlice";
 import requestReducer from "./requestSlice";
 
 const appStore = configureStore({
-    reducer: {
-        user: userReducer,
-        feed: feedReducer,
-        connections: connectionReducer,
-        requests: requestReducer,
-    },
+  reducer: {
+    user: userReducer,
+    feed: feedReducer,
+    connections: connectionReducer,
+    requests: requestReducer,
+  },
 });
 
 export default appStore;
