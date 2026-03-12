@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react'
 import { addUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants';
 
 const Login = () => {
@@ -18,9 +18,9 @@ const Login = () => {
         BASE_URL + "/login",
         {
           emailId,
-          password, 
+          password,
         }, { withCredentials: true }
-      ); 
+      );
       dispatch(addUser(res.data));
       return navigate("/");          // FEED page
 
@@ -34,10 +34,10 @@ const Login = () => {
       <div className="card bg-base-300 w-96 shadow-sm">
         <div className="card-body">
           <h2 className="card-title justify-center text-2xl">Login</h2>
-          <div className='p'>
+          <div>
             <fieldset className="fieldset my-5">
 
-              <label className='font-bold py-2'>Email ID</label>
+              <label className='font-semibold py-2'>Email</label>
               <input
                 type="email"
                 className="input"
@@ -46,7 +46,7 @@ const Login = () => {
                 placeholder="Enter your email id"
               />
 
-              <label className='font-bold py-2 pt-3'>Password</label>
+              <label className='font-semibold py-2 pt-3'>Password</label>
               <input
                 type="password"
                 className="input"
@@ -57,8 +57,14 @@ const Login = () => {
             </fieldset>
           </div>
           <p className='text-red-500'>{error}</p>
-          <div className="card-actions justify-center py-3">
-            <button className="btn btn-primary" onClick={handleLogin}>Login</button>
+          <div className="card-actions justify-center my-2">
+            <button className="btn btn-primary w-full" onClick={handleLogin}>Login</button>
+          </div>
+          <div className='text-center flex mt-2'>
+            <span className='text-sm'>Don't have an account?</span> 
+            <Link to={"/signup"}>
+              <button className="text-primary font-semibold hover:underline ml-1 cursor-pointer">Sign Up</button>
+            </Link>
           </div>
         </div>
       </div>

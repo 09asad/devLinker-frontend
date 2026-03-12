@@ -14,7 +14,7 @@ const Connections = () => {
         withCredentials: true,
       });
       dispatch(addConnections(res.data.data));
-      
+
     } catch (err) {
       console.error(err);
     }
@@ -38,13 +38,13 @@ const Connections = () => {
         return (
           <div
             key={_id}
-            className="flex items-center gap-8 bg-base-300 p-3 rounded-2xl my-3 cursor-pointer"
+            className="flex items-center gap-6 bg-base-300 p-2 rounded-2xl my-3"
           >
-            <img src={photoURL} alt="photo" className="w-30 h-30 rounded-full object-cover" />
-            <div>
-              <h2 className="font-bold text-xl">{firstName} {lastName}</h2>
-              <p>{age}, {gender}</p>
-              <p className="text-sm mt-2">{about}</p>
+            <img src={photoURL} alt="photo" className="w-20 h-20 rounded-full object-cover" />
+            <div className="max-w-xl">
+              <h2 className="font-bold text-lg">{firstName} {lastName}</h2>
+              <p className="text-sm">{age}, {gender}</p>
+              <p className="text-sm mt-2 line-clamp-2">{about}</p>
             </div>
           </div>
         );
