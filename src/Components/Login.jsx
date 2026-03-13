@@ -37,7 +37,7 @@ const Login = () => {
           <div>
             <fieldset className="fieldset my-5">
 
-              <label className='font-semibold py-2'>Email</label>
+              <label className='font-semibold py-2'>Email :</label>
               <input
                 type="email"
                 className="input"
@@ -46,7 +46,7 @@ const Login = () => {
                 placeholder="Enter your email id"
               />
 
-              <label className='font-semibold py-2 pt-3'>Password</label>
+              <label className='font-semibold py-2 pt-3'>Password :</label>
               <input
                 type="password"
                 className="input"
