@@ -57,7 +57,11 @@ const NavBar = () => {
                                 {user.firstName} {user.lastName}
                             </Link>
                         </li>
-                        <li><a>Settings</a></li>
+                        <li>
+                            <Link to="/password" className="justify-between">
+                                Password
+                            </Link>
+                        </li>
                         <li onClick={handleLogOut}><a>Logout</a></li>
                     </ul>
                 </div>}

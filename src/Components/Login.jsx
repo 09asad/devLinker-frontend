@@ -57,11 +57,11 @@ const Login = () => {
             </fieldset>
           </div>
           <p className='text-red-500'>{error}</p>
-          <div className="card-actions justify-center my-2">
+          <div className="card-actions justify-center">
             <button className="btn btn-primary w-full" onClick={handleLogin}>Login</button>
           </div>
           <div className='text-center flex mt-2'>
-            <span className='text-sm'>Don't have an account?</span> 
+            <span className='text-sm'>Don't have an account?</span>
             <Link to={"/signup"}>
               <button className="text-primary font-semibold hover:underline ml-1 cursor-pointer">Sign Up</button>
             </Link>
