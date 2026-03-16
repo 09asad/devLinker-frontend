@@ -59,12 +59,6 @@ npm run dev
 
 ---
 
-## Environment Variables
-
-VITE_BASE_URL=http://localhost:3000
-
----
-
 ## Future Improvements
 
 * Real-time notifications using Socket.IO
