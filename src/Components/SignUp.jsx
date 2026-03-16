@@ -10,6 +10,7 @@ const SignUp = () => {
   const [lastName, setLastName] = useState("");
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const SignUp = () => {
         setError("All fields are required");
         return;
       }
-      
+
       const res = await axios.post(
         BASE_URL + "/signup",
         {
@@ -50,7 +51,7 @@ const SignUp = () => {
               <label className='font-semibold py-2'>First Name : </label>
               <input
                 type="text"
-                className="input"
+                className="input w-full"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="Enter your first name"
@@ -59,7 +60,7 @@ const SignUp = () => {
               <label className='font-semibold py-2'>Last Name : </label>
               <input
                 type="text"
-                className="input"
+                className="input w-full"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder="Enter your last name"
@@ -68,20 +69,30 @@ const SignUp = () => {
               <label className='font-semibold py-2'>Email : </label>
               <input
                 type="email"
-                className="input"
+                className="input w-full"
                 value={emailId}
                 onChange={(e) => setEmailId(e.target.value)}
                 placeholder="Enter your email"
               />
 
               <label className='font-semibold py-2 pt-3'>Password : </label>
-              <input
-                type="password"
-                className="input"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className="input w-full"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                />
+
+                <button
+                  type="button"
+                  className="absolute right-3 top-2.5 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  👁️
+                </button>
+              </div>
             </fieldset>
           </div>
           <p className='text-red-500'>{error}</p>

@@ -8,6 +8,8 @@ import { removeUser } from "../utils/userSlice";
 const PasswordChange = () => {
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
+    const [showOldPassword, setShowOldPassword] = useState(false);
+    const [showNewPassword, setShowNewPassword] = useState(false);
     const [showToast, setShowToast] = useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -41,25 +43,48 @@ const PasswordChange = () => {
                         <fieldset className="fieldset my-5">
 
                             <label className='font-semibold py-2'>Old Password : </label>
-                            <input
-                                type="password"
-                                className="input"
-                                value={oldPassword}
-                                onChange={(e) => setOldPassword(e.target.value)}
-                            />
+                            <div className="relative">
+                                <input
+                                    type={showOldPassword ? "text" : "password"}
+                                    className="input w-full"
+                                    value={oldPassword}
+                                    onChange={(e) => setOldPassword(e.target.value)}
+                                    placeholder="Enter your old password"
+                                />
+                                <button
+                                    type="button"
+                                    className="absolute right-3 top-2.5 cursor-pointer"
+                                    onClick={() => setShowOldPassword(!showOldPassword)}
+                                >
+                                    👁️
+                                </button>
+                            </div>
 
                             <label className='font-semibold py-2'>New Password : </label>
-                            <input
-                                type="password"
-                                className="input"
-                                value={newPassword}
-                                onChange={(e) => setNewPassword(e.target.value)}
-                            />
+                            <div className="relative">
+                                <input
+                                    type={showNewPassword ? "text" : "password"}
+                                    className="input w-full"
+                                    value={newPassword}
+                                    onChange={(e) => setNewPassword(e.target.value)}
+                                    placeholder="Enter your new password"
+                                />
+                                <button
+                                    type="button"
+                                    className="absolute right-3 top-2.5 cursor-pointer"
+                                    onClick={() => setShowNewPassword(!showNewPassword)}
+                                >
+                                    👁️
+                                </button>
+                            </div>
                         </fieldset>
 
                     </div>
                     <div className="card-actions justify-center my-2">
-                        <button className="btn btn-primary w-full" onClick={handlePasswordChange}>Update</button>
+                        <button className="btn btn-primary w-full"
+                            disabled={!oldPassword || !newPassword}
+                            onClick={handlePasswordChange}>
+                            Update</button>
                     </div>
 
                     {showToast && <div className="toast toast-top toast-center">

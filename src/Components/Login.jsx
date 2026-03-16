@@ -9,6 +9,7 @@ const Login = () => {
   const [emailId, setEmailId] = useState("modi@gmail.com");
   const [password, setPassword] = useState("Modi@1234");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -40,27 +41,37 @@ const Login = () => {
               <label className='font-semibold py-2'>Email :</label>
               <input
                 type="email"
-                className="input"
+                className="input w-full"
                 value={emailId}
                 onChange={(e) => setEmailId(e.target.value)}
                 placeholder="Enter your email id"
               />
 
               <label className='font-semibold py-2 pt-3'>Password :</label>
-              <input
-                type="password"
-                className="input"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  className="input w-full"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                />
+
+                <button
+                  type="button"
+                  className="absolute right-3 top-2.5 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  👁️
+                </button>
+              </div>
             </fieldset>
           </div>
           <p className='text-red-500'>{error}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary w-full" onClick={handleLogin}>Login</button>
           </div>
-          <div className='text-center flex mt-2'>
+          <div className='text-center flex mt-4'>
             <span className='text-sm'>Don't have an account?</span>
             <Link to={"/signup"}>
               <button className="text-primary font-semibold hover:underline ml-1 cursor-pointer">Sign Up</button>
