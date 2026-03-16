@@ -1,45 +1,49 @@
 # DevLinker Frontend
 
-Frontend for **DevLinker**, a developer networking platform where developers can discover other developers, send connection requests, and manage professional tech connections.
+A full-stack developer networking platform where developers can discover other developers, send connection requests, and build professional tech networks.
 
-This application provides the user interface for authentication, developer feed, connection requests, and profile management.
+This repository contains the **frontend application** for DevLinker.
 
 ---
 
 ## Tech Stack
 
-React
-Redux Toolkit
-React Router DOM
-Tailwind CSS
-DaisyUI
-Axios
+* React
+* Redux Toolkit
+* React Router DOM
+* Tailwind CSS
+* DaisyUI
+* Axios
 
 ---
 
 ## Features
 
-Authentication
+### Authentication
 
 * User Signup
 * User Login
+* Secure cookie-based authentication
 
-Developer Feed
+### Developer Feed
 
 * View suggested developers
-* Send connection requests
+* Send connection requests directly from the feed
 
-Connection Requests
+### Connection Requests
 
-* Accept / Reject requests
+* View incoming connection requests
+* Accept or reject requests
 
-Connections
+### Connections
 
 * View all accepted connections
+* Clean list UI for connected developers
 
-Profile
+### Profile
 
-* View and edit profile
+* View profile information
+* Edit profile details
 
 ---
 
@@ -47,15 +51,37 @@ Profile
 
 Clone the repository
 
+```bash
 git clone https://github.com/09asad/devlinker-frontend.git
+```
+
+Navigate to the project directory
+
+```bash
+cd devlinker-frontend
+```
 
 Install dependencies
 
+```bash
 npm install
+```
 
-Run the project
+Run the development server
 
+```bash
 npm run dev
+```
+
+## Project Structure
+
+src
+├── components
+├── utils
+├── pages
+├── store
+├── App.jsx
+└── main.jsx
 
 ---
 
@@ -64,10 +90,17 @@ npm run dev
 * Real-time notifications using Socket.IO
 * Real-time chat between connections
 * Developer search functionality
+* Skill-based developer matching
 
 ---
 
 ## Related Repository
 
-Backend Repo
+Backend Repository
 https://github.com/09asad/devlinker-backend
+
+---
+
+## Author
+
+Asad Khan
